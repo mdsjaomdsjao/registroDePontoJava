@@ -18,7 +18,7 @@ class Colaborador {
     }
 
     public void registrarEntrada() {
-        // Verifica se já há uma entrada sem saída registrada.
+        // verificando se já há uma entrada sem saída registrada
         if (!registros.isEmpty() && registros.get(registros.size() - 1).getSaida() == null) {
             System.out.println("Já existe uma entrada para este registro.");
         } else {
@@ -41,10 +41,29 @@ class Colaborador {
     }
 
     public void printRegistros() {
-        System.out.println("Registros de ponto de " + this.getNome() + ":");
-        for (RegistroPonto r : registros) {
-            System.out.println(r);
-            System.out.println("--------------------");
+    	if(registros.isEmpty()) {System.out.println("Ainda não há nenhum registro.");
+    	}
+    	else{System.out.println("Registros de ponto de " + this.getNome() + ":");
+	        for (RegistroPonto r : registros) {
+	            System.out.println(r);
+	            System.out.println("--------------------");
+	        }
         }
     }
+    
+    public void printUltimosRegistros() {
+        if (registros.isEmpty()) {
+            System.out.println("Ainda não há nenhum registro.");
+        } else {
+            System.out.println("Últimos registros de ponto de " + this.getNome() + ":");
+            int total = registros.size();
+            int inicio = Math.max(0, total - 5); // garante que não passe de 0
+
+            for (int i = total - 1; i >= inicio; i--) {
+                System.out.println(registros.get(i));
+                System.out.println("--------------------");
+            }
+        }
+    }
+
 }

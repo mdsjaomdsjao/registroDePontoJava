@@ -37,7 +37,7 @@ class RegistroPonto {
 
 
     public String toString() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");// p/ uma saída mais legivel
         String entradaStr = entrada.format(formatter);
         String saidaStr = (saida != null) ? saida.format(formatter) : "----";
         return "Entrada: " + entradaStr + " | Saída: " + saidaStr + " | Trabalhado: " + calcularTempoTrabalhado();
