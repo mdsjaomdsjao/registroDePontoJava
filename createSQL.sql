@@ -1,0 +1,13 @@
+CREATE SCHEMA IF NOT EXISTS sistema_ponto;
+
+USE sistema_ponto;
+
+CREATE TABLE IF NOT EXISTS `registros` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(100) NOT NULL,
+  `cargo` VARCHAR(100) NOT NULL,
+  `tipo` VARCHAR(20) NOT NULL,
+  `horario` DATETIME NOT NULL,
+  `departamento` VARCHAR(30) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
